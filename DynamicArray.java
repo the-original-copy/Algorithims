@@ -1,4 +1,3 @@
-package data;
 @SuppressWarnings("unchecked")
 //Negate warnings that the complier highlights
 public class DynamicArray <T> implements Iterable<T> {
@@ -131,5 +130,15 @@ public class DynamicArray <T> implements Iterable<T> {
 			return sb.append(arr[len - 1] + "]").toString();
 		}
 	}
+
+    public void test(){
+        //Will check how to start a java project in eclipse
+        DynamicArray<Integer> one = new DynamicArray<Integer>(2);
+		one.add(1);
+		one.add(2);
+		System.out.print(one.toString());
+    }
 }
+
+
 
