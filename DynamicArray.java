@@ -127,6 +127,7 @@ public class DynamicArray <T> implements Iterable<T> {
 			StringBuilder sb = new StringBuilder(len).append("[");
 			for(int i = 0; i < len-1;i++)
 				sb.append(arr[i] + ",");
+                //The toString() converts the StringBuilder to String
 			return sb.append(arr[len - 1] + "]").toString();
 		}
 	}
