@@ -1,4 +1,12 @@
 public class DoublyLinkedList <T> implements Iterable<T> {
+	
+	public static void main(String [] args) {
+		DoublyLinkedList <Integer> one = new DoublyLinkedList<Integer>();
+		one.add(0);
+		one.add(1);
+		System.out.print(one.toString());
+		
+	}
 	private int size = 0;
 	private Node <T> head = null;
 	private Node <T> tail = null;
@@ -32,7 +40,7 @@ public class DoublyLinkedList <T> implements Iterable<T> {
 	}
 	
 	public int size() {
-		return size();
+		return size;
 	}
 	
 	public boolean isEmpty() {
@@ -213,10 +221,10 @@ public class DoublyLinkedList <T> implements Iterable<T> {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("[");
+		sb.append("[ ");
 		Node<T> trav = head;
 		while(trav != null) {
-			sb.append(trav.data + ", ");
+			sb.append(trav.data + " ");
 			trav = trav.next;
 		}
 		sb.append("]");
