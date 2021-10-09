@@ -1,6 +1,13 @@
 @SuppressWarnings("unchecked")
 //Negate warnings that the complier highlights
 public class DynamicArray <T> implements Iterable<T> {
+	//Test
+	public static void main(String[] args) {
+		DynamicArray<Integer> one = new DynamicArray<Integer>(2);
+		one.add(1);
+		one.add(2);
+		System.out.print(one.toString());
+	}
 //<T> means that generic are available, the array created from this class can handle any type of data
 //Iterable allows an object to be the target of an enhanced for loop
 	private T[] arr;
@@ -111,7 +118,8 @@ public class DynamicArray <T> implements Iterable<T> {
 	}
 	
 	//Iterator provides an abstraction over the iteration process, a for loop is still faster
-	@Override public java.util.Iterator <T> iterator(){
+	@Override
+	public java.util.Iterator <T> iterator(){
 		return new java.util.Iterator <T> () {
 			int index = 0;
 			//Checks if there is a next value, if index is less than len true is returned
@@ -121,25 +129,16 @@ public class DynamicArray <T> implements Iterable<T> {
 		};
 	}
 	
-	@Override public String toString() {
+	@Override
+	public String toString() {
 		if (len == 0) return "[]";
 		else {
 			StringBuilder sb = new StringBuilder(len).append("[");
 			for(int i = 0; i < len-1;i++)
 				sb.append(arr[i] + ",");
-                //The toString() converts the StringBuilder to String
+			//The toString() converts the StringBuilder to String
 			return sb.append(arr[len - 1] + "]").toString();
 		}
 	}
-
-    public void test(){
-        //Will check how to start a java project in eclipse
-        DynamicArray<Integer> one = new DynamicArray<Integer>(2);
-		one.add(1);
-		one.add(2);
-		System.out.print(one.toString());
-    }
 }
-
-
 
